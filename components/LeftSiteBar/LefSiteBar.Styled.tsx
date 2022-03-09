@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Color } from "../styledComponents/Variable.styled";
 
 export const LefSiteBarWrap = styled.div`
-  width: 240px;
+  /* width: 240px; */
   background-color: #fff;
-  min-height: 100%;
+  /* min-height: 100%; */
   border-radius: 10px;
-  margin-right: 30px;
+  /* margin-right: 30px; */
 `;
 
 export const LefSiteBar = styled.div`
