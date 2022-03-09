@@ -1,0 +1,1 @@
+export const baseUrl = 'http://103.4.145.126:3366/api/v1/content/'
