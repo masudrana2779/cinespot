@@ -152,6 +152,7 @@ type SpanProps = {
   textAlign?: string;
   borderRadius?: string;
   backgroundColor?: string;
+  textTransform?: string;
 };
 export const Span = styled.span<SpanProps>`
   color: ${(props) => props.fontColor};
@@ -174,6 +175,7 @@ export const Span = styled.span<SpanProps>`
   text-align: ${(props) => props.textAlign};
   background-color: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderRadius};
+  text-transform: ${(props) => props.textTransform};
 `;
 
 type PProps = {
@@ -226,6 +228,7 @@ type titleProps = {
   textAlign?: string;
   position?: string;
   borderColor?: string;
+  textTransform?: string;
 };
 
 export const Title = styled.p<titleProps>`
@@ -242,6 +245,7 @@ export const Title = styled.p<titleProps>`
   padding-left: ${(props) => props.paddingLeft || "0"};
   padding-right: ${(props) => props.paddingRight || "0"};
   text-align: ${(props) => props.textAlign};
+  text-transform: ${(props) => props.textTransform};
   position: relative;
 
   &::before {

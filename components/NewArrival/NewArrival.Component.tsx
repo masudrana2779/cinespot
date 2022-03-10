@@ -1,13 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import { BsClock } from "react-icons/bs";
+import { IAlbum } from "../../interfaces/IAlbum";
+import { IBanner } from "../../interfaces/IBanner";
 import { CardItem } from "../styledComponents/Card.styled";
 import { Dflex } from "../styledComponents/global.styled";
 import { DivBlock, Span, Title } from "../styledComponents/Typography.Styled";
 import { Color, FontSize } from "../styledComponents/Variable.styled";
 import { NewArrivalWrap } from "./NewArrival.styles";
 
-const NewArrivalComponent = () => {
+type NewArrivalProps = {
+  item: IAlbum;
+};
+const NewArrivalComponent = ({ item }: NewArrivalProps) => {
   return (
     <NewArrivalWrap>
       <CardItem>
@@ -16,73 +21,83 @@ const NewArrivalComponent = () => {
           paddingBottom="5px"
           fontWeight="500"
           borderColor={Color.Brand_Color}
+          textTransform="capitalize"
         >
-          New Arrivals
+          {item.playlist_name}
         </Title>
         <DivBlock>
           <DivBlock overflow="hidden">
             <DivBlock overflowY="hidden" overflowX="auto" paddingBottom="10px">
               <DivBlock display="flex" margin="0 -15px">
-                {[1, 2, 1, 1, 1, 1].map((item, i) => (
-                  <DivBlock key={i} padding="0 15px">
-                    <DivBlock width="300px">
-                      <DivBlock marginBottom="10px">
-                        <Image
-                          src="/assets/img/img.png"
-                          alt="banner"
-                          width="301"
-                          height="169"
-                        />
-                      </DivBlock>
-                      <DivBlock>
-                        <DivBlock>
-                          <Title fontWeight="500">Chak</Title>
+                {item.contents &&
+                  item.contents?.length > 0 &&
+                  item.contents?.map((content: IBanner, i) => (
+                    <DivBlock key={i} padding="0 15px">
+                      <DivBlock width="300px">
+                        <DivBlock marginBottom="10px">
+                          <DivBlock
+                            overflow="hidden"
+                            borderRadius="10px"
+                            display="flex"
+                          >
+                            <Image
+                              src={content.img_lanscape}
+                              alt="banner"
+                              width="301"
+                              height="169"
+                            />
+                          </DivBlock>
                         </DivBlock>
                         <DivBlock>
-                          <Dflex>
-                            <Span
-                              fontColor={Color.Gray_Color}
-                              fontSize={FontSize.F12}
-                            >
-                              Drama
-                            </Span>
-
-                            <Span
-                              fontColor={Color.Gray_Color}
-                              fontSize={FontSize.F12}
-                              marginRight="10px"
-                              marginLeft="10px"
-                            >
-                              |
-                            </Span>
-
-                            <Span
-                              fontColor={Color.Gray_Color}
-                              fontSize={FontSize.F12}
-                              marginRight="5px"
-                              display="flex"
-                              alignItems="center"
-                            >
+                          <DivBlock>
+                            <Title fontWeight="500">{content.title}</Title>
+                          </DivBlock>
+                          <DivBlock>
+                            <Dflex>
                               <Span
+                                fontColor={Color.Gray_Color}
+                                fontSize={FontSize.F12}
+                                textTransform="capitalize"
+                              >
+                                {content.category}
+                              </Span>
+
+                              <Span
+                                fontColor={Color.Gray_Color}
+                                fontSize={FontSize.F12}
+                                marginRight="10px"
+                                marginLeft="10px"
+                              >
+                                |
+                              </Span>
+
+                              <Span
+                                fontColor={Color.Gray_Color}
+                                fontSize={FontSize.F12}
+                                marginRight="5px"
                                 display="flex"
                                 alignItems="center"
-                                fontColor="#292929"
-                                fontSize="10px"
-                                marginRight="3px"
-                                paddingTop="2px"
                               >
-                                <BsClock />
+                                <Span
+                                  display="flex"
+                                  alignItems="center"
+                                  fontColor="#292929"
+                                  fontSize="10px"
+                                  marginRight="3px"
+                                  paddingTop="2px"
+                                >
+                                  <BsClock />
+                                </Span>
+                                <Span display="flex" alignItems="center">
+                                  {content.video_duration}
+                                </Span>
                               </Span>
-                              <Span display="flex" alignItems="center">
-                                1hr.40min
-                              </Span>
-                            </Span>
-                          </Dflex>
+                            </Dflex>
+                          </DivBlock>
                         </DivBlock>
                       </DivBlock>
                     </DivBlock>
-                  </DivBlock>
-                ))}
+                  ))}
               </DivBlock>
             </DivBlock>
           </DivBlock>

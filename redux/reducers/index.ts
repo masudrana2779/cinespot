@@ -1,9 +1,5 @@
 import { combineReducers } from "redux";
-import { doctorDashboardReducer } from "../../components/doctor/redux/reducer";
-import { callerInfoReducer, callReducer } from "../../xmpp/redux/reducer";
+import { bannerReducer } from "../../components/Banner/redux/reducer";
+import { newArrivalReducer } from "../../components/NewArrival/redux/reducer";
 
-export default combineReducers({
-  callReducer,
-  callerInfoReducer,
-  doctorDashboardReducer,
-});
+export default combineReducers({ bannerReducer,newArrivalReducer });
