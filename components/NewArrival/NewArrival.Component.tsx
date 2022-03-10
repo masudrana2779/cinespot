@@ -22,7 +22,7 @@ const NewArrivalComponent = () => {
         <DivBlock>
           <DivBlock overflow="hidden">
             <DivBlock overflowY="hidden" overflowX="auto" paddingBottom="10px">
-              <DivBlock display="flex">
+              <DivBlock display="flex" margin="0 -15px">
                 {[1, 2, 1, 1, 1, 1].map((item, i) => (
                   <DivBlock key={i} padding="0 15px">
                     <DivBlock width="300px">
