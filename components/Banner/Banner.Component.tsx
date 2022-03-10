@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { AiFillPlusCircle } from "react-icons/ai";
 import { BsFillPlayFill } from "react-icons/bs";
 import { Button } from "../styledComponents/Button.Styled";
 import { CardItem } from "../styledComponents/Card.styled";
@@ -117,6 +118,8 @@ const BannerComponent = () => {
                           hoverBackground="#E60909"
                           fontSize={FontSize.F14}
                           fontWeight="500"
+                          as='a'
+                          href='/'
                         >
                           <Span
                             display="flex"
@@ -135,15 +138,17 @@ const BannerComponent = () => {
                           </Span>
                         </Button>
                       </DivBlock>
-                      {/* <DivBlock>
-                      <Span
-                        fontColor="#BBBBBB"
-                        fontSize="28px"
-                        cursor="pointer"
-                      >
-                        <AiFillPlusCircle />
-                      </Span>
-                    </DivBlock> */}
+                      <DivBlock>
+                        <Span
+                          fontColor="#BBBBBB"
+                          fontSize="28px"
+                          cursor="pointer"
+                          as='a'
+                          href='/'
+                        >
+                          <AiFillPlusCircle />
+                        </Span>
+                      </DivBlock>
                     </Dflex>
                   </DivBlock>
                 </BannerContentInfo>

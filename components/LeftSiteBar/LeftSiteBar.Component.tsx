@@ -12,7 +12,7 @@ const LefSiteBarComponent = () => {
   return (
     <LefSiteBarWrap>
       <LefSiteBar>
-        <DivBlock paddingBottom="0px">
+        <DivBlock>
           <DivBlock marginBottom="50px">
             <Logo>
               <Link href={"/"}>

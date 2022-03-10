@@ -34,6 +34,7 @@ type DivBlogProps = {
   display?: string;
   alignItems?: string;
   justifyContent?: string;
+  gridTemplateColumns?: string;
 };
 
 export const DivBlock = styled.div<DivBlogProps>`
@@ -69,6 +70,26 @@ export const DivBlock = styled.div<DivBlogProps>`
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
   justify-content: ${(props) => props.justifyContent};
+  grid-template-columns: ${(props) => props.gridTemplateColumns};
+
+  /* Cusctom scroll bar for mozila firefox */
+  scrollbar-color: #aaa #3330;
+  scrollbar-width: thin;
+
+  /* Custom Scroll bar for google chrome */
+  &::-webkit-scrollbar {
+    /* display: none; */
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    background-color: #aaa0;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+  }
 `;
 
 type TypographyProps = {
